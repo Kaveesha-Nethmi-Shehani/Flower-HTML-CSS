@@ -10,14 +10,26 @@
 <body>
 
     <div id="navbar-placeholder"></div>
+    <div id="home-placeholder"></div>
 
     <script>
-        // navbar.html ෆයිල් එක කියවා ගෙන එන්න (Fetch)
+        
         fetch('navbar.html')
             .then(response => response.text())
             .then(data => {
-                // ලබාගත් කෝඩ් එක උඩ තියෙන div එක ඇතුලට දමන්න
+    
                 document.getElementById('navbar-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+
+    <script>
+        
+        fetch('home.html')
+            .then(response => response.text())
+            .then(data => {
+    
+                document.getElementById('home-placeholder').innerHTML = data;
             })
             .catch(error => console.error('Error loading navbar:', error));
     </script>
