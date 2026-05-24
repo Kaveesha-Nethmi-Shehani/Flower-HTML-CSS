@@ -3,16 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlowerWeb</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="navbarsheet" href="navbar.html">
- 
+    <title>flowerweb</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> 
 </head>
-
 <body>
- 
 
+    <div id="navbar-placeholder"></div>
 
-    
-</body>
+    <script>
+        // navbar.html ෆයිල් එක කියවා ගෙන එන්න (Fetch)
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                // ලබාගත් කෝඩ් එක උඩ තියෙන div එක ඇතුලට දමන්න
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+
+    </body>
 </html>
