@@ -52,6 +52,75 @@ header .navbar a:hover{
 }
 
 
+/************************************************************************** Home Page *******************************************************************************/
+
+.home-pic{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    
+}
+
+.home-pic img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.home-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+    color: white;
+
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(-5px);
+
+    padding: 50px 80px;
+    border-radius: 15px;
+    max-width: 400px;
+    max-height: 800px;
+ }
+
+.title h2 {
+    font-size: 32px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   /* margin-bottom: 10px;*/
+    margin-top: 40px;
+}
+
+.sub-title p{
+    font-size: 16px;
+    margin-bottom: 40px;
+    /*margin-top: 10px;*/
+    line-height: 1.5;
+}
+
+.home-box button{
+    padding: 10px 80px;
+    margin-top: 50px;
+    border: 1px solid rgb(151, 149, 149);
+    background: transparent;
+    color: rgb(117, 117, 118);
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 15px;
+}
+
+.home-box button:hover{
+    background: rgb(245, 243, 243);
+    color: black;
+    border-radius: 20px;
+}
+
+
+
+
 
 
 
