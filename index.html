@@ -11,9 +11,12 @@
 
     <div id="navbar-placeholder"></div>
     <div id="home-placeholder"></div>
+    <div id="about-placeholder"></div>
 
+
+
+    /************************************************************************** Navigation *******************************************************************************/
     <script>
-        
         fetch('navbar.html')
             .then(response => response.text())
             .then(data => {
@@ -23,8 +26,8 @@
             .catch(error => console.error('Error loading navbar:', error));
     </script>
 
+    /************************************************************************** Home Page *******************************************************************************/
     <script>
-        
         fetch('home.html')
             .then(response => response.text())
             .then(data => {
@@ -33,6 +36,19 @@
             })
             .catch(error => console.error('Error loading navbar:', error));
     </script>
+
+    /************************************************************************** About Page *******************************************************************************/
+    <script>
+        fetch('about.html')
+            .then(response => response.text())
+            .then(data => {
+    
+                document.getElementById('about-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+
+
 
     
 
