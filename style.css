@@ -178,7 +178,7 @@ header .navbar a:hover{
 
 /************************************************************************** Service Page *******************************************************************************/
 
-body {
+.service-page{
     background: url('assets/background.avif') no-repeat center center fixed;
     background-size: cover;
     font-family: Arial, sans-serif;
@@ -266,4 +266,105 @@ body::before {
 .btn:hover {
     background: rgb(232, 51, 241);
 }
+
+/************************************************************************** Review Page *******************************************************************************/
+
+.review-section{
+    background: #e2c6eb;
+    /*display: flex;*/
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    padding: 150px;
+    min-height: 100vh;
+}
+
+.review-card{
+    width: 260px;
+    height: 150px;
+
+    background:  plum;
+    border-radius: 20px;
+    overflow: hidden;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    box-shadow: 0 10px 35px rgba(195, 0, 255, 0.3);
+
+    text-align: center;
+    transition: 0.4s;
+
+    color: #f9f9f9;
+
+    animation: floatCard 4s ease-in-out infinite;
+}
+
+ 
+
+.des{
+    font-size: 15px;
+    font-style: italic;
+    color: black;
+    margin-top: 40px;
+}
+
+.review-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 15px 45px rgba(242, 31, 168, 0.4);
+     
+}
+
+@keyframes floatCard {
+   0%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(-15px);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+
+    .review-card:nth-child(2){
+    animation-delay: 1s;
+}
+
+.review-card:nth-child(3){
+    animation-delay: 2s;
+}
+
+.review-card:nth-child(4){
+    animation-delay: 3s;
+}
+
+.review-card:nth-child(5){
+    animation-delay: 4s;
+}
+
+.review-card:nth-child(6){
+    animation-delay: 5s;
+}
+
+.review-card:nth-child(7){
+    animation-delay: 6s;
+}
+
+.review-card:nth-child(8){
+    animation-delay: 7s;
+}
+
+
+
+
+    
+
+
 
