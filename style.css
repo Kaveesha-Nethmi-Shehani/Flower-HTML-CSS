@@ -178,3 +178,9 @@ header .navbar a:hover{
 
 /************************************************************************** Service Page *******************************************************************************/
 
+body {
+    background: url('assets/background.avif') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
