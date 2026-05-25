@@ -38,15 +38,57 @@
     </script>
 
     /************************************************************************** About Page *******************************************************************************/
+     <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load About Page</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #about-placeholder{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- About page load wena place eka -->
+    <div id="about-placeholder"></div>
+
+
     <script>
-        fetch('about.html')
-            .then(response => response.text())
-            .then(data => {
-    
-                document.getElementById('about-placeholder').innerHTML = data;
+        fetch('./about.html')
+            .then(response => {
+
+                if (!response.ok) {
+                    throw new Error("about.html file not found");
+                }
+
+                return response.text();
             })
-            .catch(error => console.error('Error loading navbar:', error));
+
+            .then(data => {
+
+                document.getElementById('about-placeholder').innerHTML = data;
+
+            })
+
+            .catch(error => {
+
+                console.error('Error loading about page:', error);
+
+            });
     </script>
+
+</body>
+</html>
 
 
 
