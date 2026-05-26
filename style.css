@@ -264,7 +264,7 @@ body::before {
 }
 
 .btn:hover {
-    background: rgb(232, 51, 241);
+    background: #bb00fa;
 }
 
 /************************************************************************** Review Page *******************************************************************************/
@@ -304,8 +304,6 @@ body::before {
     animation: floatCard 4s ease-in-out infinite;
 }
 
- 
-
 .des{
     font-size: 15px;
     font-style: italic;
@@ -316,11 +314,11 @@ body::before {
 .review-card:hover {
     transform: translateY(-15px) scale(1.03);
     box-shadow: 0 15px 45px rgba(242, 31, 168, 0.4);
-     
+
 }
 
 @keyframes floatCard {
-   0%{
+    0%{
         transform: translateY(0);
     }
 
@@ -361,10 +359,106 @@ body::before {
     animation-delay: 7s;
 }
 
+/************************************************************************** Contact Page *******************************************************************************/
 
+.contact-page{
+    position: relative;
+    min-width: 100%;
+    min-height: 50vh;
+    overflow: hidden;
+}
 
+.contact-page img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-    
+.contact-card{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
+    text-align: center;
+    color: white;
 
+    background: rgba(144, 142, 142, 0.35);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(-8px);
 
+    padding: 50px 80px;
+    border-radius: 15px;
+    width: 800px;
+    height: 500px;
+ }
+
+ .cp{
+    font-size: 25px;
+    font-family: 'Great Vibes', cursive; 
+    color: rgb(255, 255, 255);
+}
+
+form{
+    width: 420px;
+    margin: 50px auto;
+    padding: 50px;
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+form input,
+form textarea{
+    width: 100%;
+    padding: 15px 18px;
+
+    border: none;
+    outline: none;
+    border-radius: 12px;
+     
+
+    background: rgba(255,255,255,0.8);
+
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+
+    transition: 0.3s;
+}
+
+form input:focus,
+form textarea:focus{
+    background: #fbfafa;
+    box-shadow: 0 0 10px rgba(249, 39, 144, 0.4);
+}
+
+form textarea{
+    resize: none;
+}
+
+form button{
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(45deg,#ff4d6d,#ff85a1);
+
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(249, 2, 47, 0.4);
+}
