@@ -3,96 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>flowerweb</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css"> 
+    <title>Flower Website</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div id="navbar-placeholder"></div>
+
     <div id="home-placeholder"></div>
+
     <div id="about-placeholder"></div>
 
+    <div id="service-placeholder"></div>
+
+    <div id="review-placeholder"></div>
+
+    <div id="contact-placeholder"></div>
+
+    <div id="footer-placeholder"></div>
 
 
-    /************************************************************************** Navigation *******************************************************************************/
     <script>
+        // // Navbar එක Fetch කිරීම
         fetch('navbar.html')
             .then(response => response.text())
             .then(data => {
-    
                 document.getElementById('navbar-placeholder').innerHTML = data;
             })
             .catch(error => console.error('Error loading navbar:', error));
-    </script>
 
-    /************************************************************************** Home Page *******************************************************************************/
-    <script>
+        // Home Section එක Fetch කිරීම
         fetch('home.html')
             .then(response => response.text())
             .then(data => {
-    
                 document.getElementById('home-placeholder').innerHTML = data;
             })
-            .catch(error => console.error('Error loading navbar:', error));
-    </script>
+            .catch(error => console.error('Error loading home section:', error));
 
-    /************************************************************************** About Page *******************************************************************************/
-     <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Load About Page</title>
-
-    <style>
-        body{
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        #about-placeholder{
-            width: 100%;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- About page load wena place eka -->
-    <div id="about-placeholder"></div>
-
-
-    <script>
-        fetch('./about.html')
-            .then(response => {
-
-                if (!response.ok) {
-                    throw new Error("about.html file not found");
-                }
-
-                return response.text();
-            })
-
+        // // About Section එක Fetch කිරීම
+        fetch('about.html')
+            .then(response => response.text())
             .then(data => {
-
-                document.getElementById('about-placeholder').innerHTML = data;
-
+            document.getElementById('about-placeholder').innerHTML = data;
             })
+            .catch(error => console.error('Error loading about section:', error));
 
-            .catch(error => {
+        // Service Section එක Fetch කිරීම
+        fetch('service.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('service-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading service section:', error));
 
-                console.error('Error loading about page:', error);
+        // Review Section එක Fetch කිරීම
+        fetch('review.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('review-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading review section:', error));
 
-            });
+        // Contact Section එක Fetch කිරීම
+        fetch('contact.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('contact-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading review section:', error));
+
+
+        // Footer එක Fetch කිරීම
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
     </script>
 
+    <script src="script.js"></script>
 </body>
-</html>
-
-
-
-    
-
-    </body>
 </html>

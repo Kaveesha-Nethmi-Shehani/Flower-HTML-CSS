@@ -1,9 +1,9 @@
-:root{
-    --pink:var(--pink);
-
-
-
+/* ========================================== Root Variables & Reset ========================================== */
+:root {
+    --pink: #ff4d6d;
+    --purple: #bb00fa;
 }
+
 *{
     margin: 0;
     padding: 0;
@@ -12,54 +12,76 @@
     border: none;
     text-decoration: none;
     text-transform: capitalize;
-    transition: 2s linear;
-    
+    transition: 0.3s linear;
+    box-sizing: border-box; /* Elements පිටතට පැනීම සහ පින්තූර කැපී යාම වළක්වයි */
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
 }
 
 html{
     font-size: 100%;
     scroll-padding-top: 8rem;
     scroll-behavior: smooth;
-    overflow: hidden;
+    overflow-y: auto;
 }
 
-header{
+/* ========================================== Header ========================================== */
+header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     background: rgb(250, 249, 250);
-    padding: 0rem 2%;
+   /* padding: 0.5rem 1.5rem;*/
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 100;
-    box-shadow: 0.8rem 0rem rgb(0, 0, 0);
+    box-shadow: 0rem 0.2rem 1rem rgba(0,0,0,0.1);
 }
 
-header .logo span{
-    font-size: 2rem;
+header .logo {
+    /* margin-left: auto;  ← මේක ඉවත් කළා, logo left එකේ තියෙනවා */
 }
 
-header .navbar a{
+header .logo img {
+    height: 80px;
+}
+
+header .navbar {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+header .navbar a {
     font-size: 1.2rem;
-    padding:  2.8rem;
-    color: rgb(5, 0, 0)
+    font-weight: bolder;
+    padding: 0.5rem 1.5rem;
+    color: rgb(5, 0, 0);
+    text-decoration: none;
 }
 
-header .navbar a:hover{
+header .navbar a:hover {
     color: rgb(246, 3, 165);
 }
 
+header .icons {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: auto; /* ← icons right side එකට */
+}
 
-/************************************************************************** Home Page *******************************************************************************/
-
+/* ========================================== Home Page ========================================== */
 .home-pic{
     position: relative;
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    
 }
 
 .home-pic img{
@@ -73,175 +95,205 @@ header .navbar a:hover{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
     text-align: center;
     color: white;
-
-    background: rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(0px);
-    -webkit-backdrop-filter: blur(-2px);
-
-    padding: 50px 80px;
+    background: rgba(0, 0, 0, 0.45); 
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 50px 40px;
     border-radius: 15px;
-    max-width: 400px;
-    max-height: 800px;
- }
+    width: 90%;
+    max-width: 450px;
+}
 
 .title h2 {
     font-size: 32px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   /* margin-bottom: 10px;*/
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
-.sub-title p{
+/*.sub-title p{
     font-size: 16px;
-    margin-bottom: 40px;
-    /*margin-top: 10px;*/
+    margin-bottom: 30px;
     line-height: 1.5;
-}
+}*/
 
 .home-box button{
-    padding: 10px 80px;
-    font-size: 20px;
-    margin-top: 50px;
+    padding: 12px 40px;
+    font-size: 18px;
     border: 1px solid rgb(151, 149, 149);
     background: transparent;
     color: rgb(250, 246, 246);
     cursor: pointer;
     transition: 0.3s;
-    border-radius: 20px;
+    border-radius: 50px;
+    margin-top: 30px;
 }
 
 .home-box button:hover{
     background: rgb(245, 243, 243);
     color: black;
-    border-radius: 20px;
 }
 
-/************************************************************************** About Page *******************************************************************************/
-
+/* ========================================== About Page ========================================== */
 .ab-img{
-    background-color: #e2c6eb;
+    min-height: 100vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px;
-    margin-bottom: 20px;
-    gap: 40px;
-    height: 85vh;
-    
+    gap: 60px;
+    padding: 10px 8%;
+    flex-wrap: wrap;
+    background-color: #fcd6fd;
 }
 
+ 
+.ab-img img{
+    width: 450px;
+    height: 80vh;
+    border-radius: 25px;
+      
+    object-fit: cover;
+    box-shadow: 0 15px 35px  rgb(251, 125, 209);
+    transition: 0.4s ease;
+}
+
+.ab-img img:hover{
+    transform: scale(1.03);
+}
+
+ 
 .card{
-    width: 400px;
-    padding: 35px;
-
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
+    max-width: 550px;
+    padding: 20px;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.1);
+    margin-left: 90px;
+}
 
-    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-
-    color: rgb(0, 0, 0);
-    
-    width: 100%;
-    height: 50%;
-    margin-left: 20px;
-    margin-right: 20px;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(177, 31, 31, 0.15);
+ 
+.card h2{
+    font-size: 42px;
+    color: var(--dark);
+    margin-bottom: 50px;
+   /* line-height: 1.2;*/
+    margin-left: 100px;
 }
 
 .card-sp{
-    color: #bb00fa;
-
+    color:  rgb(246, 3, 165);
 }
 
-.card h2{
-    font-size: 30px;
-    margin-left: 200px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+.ab-img img:hover{
+    box-shadow: 0 15px 35px  rgb(240, 76, 240);
 }
 
+ 
 .card p{
-    font-size: 15px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-top: 25px;
-    margin-left: 10px;
-
+    font-size: 20px;
+    font-weight: bold;
+    color: #444;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: justify;
+    color: #040404;
 }
 
-/************************************************************************** Service Page *******************************************************************************/
+ 
+.card p::first-letter{
+    font-size: 28px;
+    font-weight: bold;
+    color: rgb(246, 3, 165);
+}
 
-.service-page{
-    background: url('assets/background.avif') no-repeat center center fixed;
-    background-size: cover;
-    font-family: Arial, sans-serif;
+/* ===================== RESPONSIVE ===================== */
+@media(max-width: 900px){
+
+    .ab-img{
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 20px;
+    }
+
+    .card{
+        padding: 30px;
+    }
+
+    .card h2{
+        font-size: 34px;
+    }
+
+    .card p{
+        text-align: center;
+    }
+}
+ 
+/* ========================================== Service Page ========================================== */
+.service-page {
     position: relative;
-}
-
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
+    min-height: 50vh;
     width: 100%;
-    height: 100%;
+    /* පසුබිම් පින්තූරය මෙතැනට ලබා දී ඇත */
+  /*  background: url('assets/service-background.jpg') no-repeat center center fixed;*/
+     
+    background-size: cover;
+    overflow-x: hidden;
 
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
 
-    z-index: -1;
 }
+
+/* මුළු පිටුවම වැසී යන සේ තිබූ body::before එක වෙනුවට, background එක පමණක් blur කිරීමට pseudo-element එකක් භාවිතා කර ඇත */
 
 .service-container {
+    position: relative;
     display: flex;
     justify-content: center;
-    gap: 100px;
+    gap: 40px; 
+    background: url('assets/service-background.jpg') no-repeat center center fixed;
+    min-height: 100vh;
+    width: 100%;
+
+     background-size: cover;
+    overflow-x: hidden;
+     
     flex-wrap: wrap;
-    padding: 100px;
-}
+    padding: 120px 20px;
+    z-index: 2; 
+}/* blur එකට උඩින් කාඩ්පත් පෙන්වීමට */
+
 
 .service-card {
     width: 320px;
-    height: 420px;
-
+    height: auto; 
     background: rgba(255, 255, 255, 0.12);
     border-radius: 20px;
     overflow: hidden;
-
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-
     border: 1px solid rgba(255, 255, 255, 0.25);
-
     box-shadow: 0 10px 35px rgba(0,0,0,0.3);
-
     text-align: center;
     transition: 0.4s;
-
     color: #fff;
+    padding-bottom: 25px;
 }
-
 
 .service-card:hover {
     transform: translateY(-15px) scale(1.03);
-    box-shadow: 0 15px 45px rgba(0,0,0,0.4);
+    box-shadow: 0 15px 45px rgba(247, 153, 224, 0.4);
 }
-
 
 .service-card img {
     width: 100%;
     height: 240px;
-    object-fit: cover;
+    object-fit: cover; 
+    display: block;
 }
-
 
 .price {
     margin: 15px 0;
@@ -250,57 +302,283 @@ body::before {
     color: #fff;
 }
 
+.name {
+    margin: 15px 0;
+    font-weight: bolder;
+    font-size: 18px;
+    color: rgb(247, 245, 246);;
+}
 
 .btn {
     display: inline-block;
-    margin-top: 40px;
+    margin-top: 50px;
     padding: 10px 48px;
     background: rgba(0, 0, 0, 0.7);
     color: rgb(251, 251, 251);
-    text-decoration: none;
     border-radius: 50px;
     transition: 0.3s;
     font-weight: bolder;
 }
 
 .btn:hover {
-    background: #bb00fa;
+    background: #fcd6fd;
+    color: #040404;
 }
 
-/************************************************************************** Review Page *******************************************************************************/
+/* ==========================================   Boq.page ========================================== */
 
+ 
+
+/* මුළු පිටුවම වැසී යන සේ තිබූ body::before එක වෙනුවට, background එක පමණක් blur කිරීමට pseudo-element එකක් භාවිතා කර ඇත */
+
+.boq {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 40px; 
+    min-height: 100vh;
+    width: 100%;
+
+     background-size: cover;
+    overflow-x: hidden;
+     
+    flex-wrap: wrap;
+    padding: 30px 80px;
+    z-index: 2; 
+    margin-right: 100px;
+    background-color: rgb(247, 209, 215);
+}/* blur එකට උඩින් කාඩ්පත් පෙන්වීමට */
+
+
+.boq-card {
+    width: 320px;
+    height: 50vh; 
+    background: rgba(255, 2, 226, 0.12);
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 10px 35px rgba(0,0,0,0.3);
+    text-align: center;
+    transition: 0.4s;
+     
+    padding-bottom: 10px;
+}
+
+.boq-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 15px 45px rgba(247, 153, 224, 0.4);
+}
+
+.boq-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover; 
+    display: block;
+}
+
+.price {
+    margin: 15px 0;
+    font-weight: bold;
+    font-size: 18px;
+    color: #050505;
+}
+
+ 
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 48px;
+    background: rgba(0, 0, 0, 0.7);
+    color: rgb(251, 251, 251);
+    border-radius: 50px;
+    transition: 0.3s;
+    font-weight: bolder;
+}
+
+.btn:hover {
+    background: #fcd6fd;
+    color: #040404;
+}
+/* ========================================== Deacarations Page ========================================== */
+
+.boq {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 40px; 
+    min-height: 100vh;
+    width: 100%;
+
+     background-size: cover;
+    overflow-x: hidden;
+     
+    flex-wrap: wrap;
+    padding: 30px 80px;
+    z-index: 2; 
+    margin-right: 100px;
+    background-color: rgb(247, 209, 215);
+
+}/* blur එකට උඩින් කාඩ්පත් පෙන්වීමට */
+
+
+.boq-card {
+    width: 320px;
+    height: 50vh; 
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 10px 35px rgba(0,0,0,0.3);
+    text-align: center;
+    transition: 0.4s;
+    color: #fff;
+    padding-bottom: 10px;
+}
+
+.boq-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 15px 45px rgba(247, 153, 224, 0.4);
+}
+
+.boq-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover; 
+    display: block;
+}
+
+.price {
+    margin: 15px 0;
+    font-weight: bold;
+    font-size: 18px;
+    color: #050505;
+}
+
+ 
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 48px;
+    background: rgba(0, 0, 0, 0.7);
+    color: rgb(251, 251, 251);
+    border-radius: 50px;
+    transition: 0.3s;
+    font-weight: bolder;
+}
+
+.btn:hover {
+    background: #fcd6fd;
+    color: #040404;
+}
+
+/* ========================================== Wedding BoqPage ========================================== */
+boq {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 40px; 
+    min-height: 100vh;
+    width: 100%;
+
+     background-size: cover;
+    overflow-x: hidden;
+     
+    flex-wrap: wrap;
+    padding: 30px 80px;
+    z-index: 2; 
+    margin-right: 100px;
+    background-color: rgb(247, 209, 215);
+
+}/* blur එකට උඩින් කාඩ්පත් පෙන්වීමට */
+
+
+.boq-card {
+    width: 320px;
+    height: 50vh; 
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 10px 35px rgba(0,0,0,0.3);
+    text-align: center;
+    transition: 0.4s;
+    color: #fff;
+    padding-bottom: 10px;
+}
+
+.boq-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 15px 45px rgba(247, 153, 224, 0.4);
+}
+
+.boq-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover; 
+    display: block;
+}
+
+.price {
+    margin: 15px 0;
+    font-weight: bold;
+    font-size: 18px;
+    color: #050505;
+}
+
+ 
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 48px;
+    background: rgba(0, 0, 0, 0.7);
+    color: rgb(251, 251, 251);
+    border-radius: 50px;
+    transition: 0.3s;
+    font-weight: bolder;
+}
+
+.btn:hover {
+    background: #fcd6fd;
+    color: #040404;
+}
+
+
+
+
+/* ========================================== Review Page ========================================== */
 .review-section{
     background: #e2c6eb;
-    /*display: flex;*/
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    justify-content: center;
-    gap: 50px;
+    display: flex; 
     flex-wrap: wrap;
-    padding: 150px;
-    min-height: 100vh;
+    justify-content: center;
+    gap: 40px;
+    padding: 120px 20px;
+    min-height: 50vh;
 }
 
 .review-card{
-    width: 260px;
-    height: 150px;
-
-    background:  plum;
+    width: 280px;
+    height: 180px; 
+    background: plum;
     border-radius: 20px;
     overflow: hidden;
-
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-
     border: 1px solid rgba(255, 255, 255, 0.25);
-
     box-shadow: 0 10px 35px rgba(195, 0, 255, 0.3);
-
     text-align: center;
     transition: 0.4s;
-
     color: #f9f9f9;
-
+    padding: 20px;
     animation: floatCard 4s ease-in-out infinite;
 }
 
@@ -308,63 +586,29 @@ body::before {
     font-size: 15px;
     font-style: italic;
     color: black;
-    margin-top: 40px;
+    margin-top: 10px;
+    line-height: 1.4;
 }
 
 .review-card:hover {
     transform: translateY(-15px) scale(1.03);
     box-shadow: 0 15px 45px rgba(242, 31, 168, 0.4);
-
 }
 
 @keyframes floatCard {
-    0%{
-        transform: translateY(0);
-    }
-
-    50%{
-        transform: translateY(-15px);
-    }
-
-    100%{
-        transform: translateY(0);
-    }
+    0%, 100%{ transform: translateY(0); }
+    50%{ transform: translateY(-15px); }
 }
 
-    .review-card:nth-child(2){
-    animation-delay: 1s;
-}
+.review-card:nth-child(2){ animation-delay: 0.5s; }
+.review-card:nth-child(3){ animation-delay: 1s; }
+.review-card:nth-child(4){ animation-delay: 1.5s; }
 
-.review-card:nth-child(3){
-    animation-delay: 2s;
-}
-
-.review-card:nth-child(4){
-    animation-delay: 3s;
-}
-
-.review-card:nth-child(5){
-    animation-delay: 4s;
-}
-
-.review-card:nth-child(6){
-    animation-delay: 5s;
-}
-
-.review-card:nth-child(7){
-    animation-delay: 6s;
-}
-
-.review-card:nth-child(8){
-    animation-delay: 7s;
-}
-
-/************************************************************************** Contact Page *******************************************************************************/
-
+/* ========================================== Contact Page ========================================== */
 .contact-page{
     position: relative;
-    min-width: 100%;
-    min-height: 50vh;
+    width: 100%;
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -376,60 +620,46 @@ body::before {
 
 .contact-card{
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
     text-align: center;
     color: white;
-
-    background: rgba(144, 142, 142, 0.35);
-    backdrop-filter: blur(0px);
-    -webkit-backdrop-filter: blur(-8px);
-
-    padding: 50px 80px;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 30px;
     border-radius: 15px;
-    width: 800px;
-    height: 500px;
- }
+    width: 90%;
+    max-width: 500px;
+}
 
- .cp{
+.cp{
     font-size: 25px;
-    font-family: 'Great Vibes', cursive; 
+    font-family: Arial, sans-serif;
     color: rgb(255, 255, 255);
 }
 
 form{
-    width: 420px;
-    margin: 50px auto;
-    padding: 50px;
+    margin-top: 20px;
+    padding: 20px;
     border-radius: 20px;
-
     background: rgba(255,255,255,0.15);
     backdrop-filter: blur(12px);
-
     box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 15px;
 }
 
 form input,
 form textarea{
     width: 100%;
-    padding: 15px 18px;
-
-    border: none;
-    outline: none;
+    padding: 12px;
     border-radius: 12px;
-     
-
-    background: rgba(255,255,255,0.8);
-
+    background: rgba(255,255,255,0.9);
     font-size: 16px;
     font-family: Arial, sans-serif;
-
     transition: 0.3s;
 }
 
@@ -441,19 +671,16 @@ form textarea:focus{
 
 form textarea{
     resize: none;
+    height: 100px;
 }
 
 form button{
-    padding: 15px;
-    border: none;
+    padding: 12px;
     border-radius: 12px;
-
-    background: linear-gradient(45deg,#ff4d6d,#ff85a1);
-
+    background: linear-gradient(45deg, var(--pink), #ff85a1);
     color: white;
     font-size: 17px;
     font-weight: bold;
-
     cursor: pointer;
     transition: 0.3s;
 }
@@ -462,3 +689,28 @@ form button:hover{
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(249, 2, 47, 0.4);
 }
+
+/* ========================================== Footer Page ========================================== */
+.footer{
+    background: #f1d4f1;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-links{
+    margin-bottom: 25px;
+}
+
+.footer-links a{
+    color: rgb(5, 5, 5);
+    margin: 0 20px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.footer-links a:hover{
+    color: var(--pink);
+}
+
+ 
