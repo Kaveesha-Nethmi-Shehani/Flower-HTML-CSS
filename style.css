@@ -43,12 +43,13 @@ header {
     box-shadow: 0rem 0.2rem 1rem rgba(0,0,0,0.1);
 }
 
-header .logo {
-    /* margin-left: auto;  ← මේක ඉවත් කළා, logo left එකේ තියෙනවා */
-}
+/*.header .logo {
+    margin-right:20px;
+}*/
 
-header .logo img {
+.header .logo img {
     height: 80px;
+    
 }
 
 header .navbar {
@@ -73,7 +74,7 @@ header .icons {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    margin-left: auto; /* ← icons right side එකට */
+    margin-left: auto;  
 }
 
 /* ========================================== Home Page ========================================== */
@@ -238,16 +239,9 @@ header .icons {
     position: relative;
     min-height: 50vh;
     width: 100%;
-    /* පසුබිම් පින්තූරය මෙතැනට ලබා දී ඇත */
-  /*  background: url('assets/service-background.jpg') no-repeat center center fixed;*/
-     
     background-size: cover;
     overflow-x: hidden;
-
-
 }
-
-/* මුළු පිටුවම වැසී යන සේ තිබූ body::before එක වෙනුවට, background එක පමණක් blur කිරීමට pseudo-element එකක් භාවිතා කර ඇත */
 
 .service-container {
     position: relative;
@@ -257,15 +251,12 @@ header .icons {
     background: url('assets/service-background.jpg') no-repeat center center fixed;
     min-height: 100vh;
     width: 100%;
-
-     background-size: cover;
+    background-size: cover;
     overflow-x: hidden;
-     
     flex-wrap: wrap;
     padding: 120px 20px;
     z-index: 2; 
-}/* blur එකට උඩින් කාඩ්පත් පෙන්වීමට */
-
+} 
 
 .service-card {
     width: 320px;
@@ -327,10 +318,6 @@ header .icons {
 
 /* ==========================================   Boq.page ========================================== */
 
- 
-
-/* මුළු පිටුවම වැසී යන සේ තිබූ body::before එක වෙනුවට, background එක පමණක් blur කිරීමට pseudo-element එකක් භාවිතා කර ඇත */
-
 .boq {
     position: relative;
     display: flex;
@@ -338,19 +325,16 @@ header .icons {
     gap: 40px; 
     min-height: 100vh;
     width: 100%;
-
-     background-size: cover;
+    background-size: cover;
     overflow-x: hidden;
-     
     flex-wrap: wrap;
     padding: 30px 80px;
     z-index: 2; 
     margin-right: 100px;
     background-color: rgb(247, 209, 215);
-}/* blur එකට උඩින් කාඩ්පත් පෙන්වීමට */
+}
 
-
-.boq-card {
+    .boq-card {
     width: 320px;
     height: 50vh; 
     background: rgba(255, 2, 226, 0.12);
@@ -362,7 +346,6 @@ header .icons {
     box-shadow: 0 10px 35px rgba(0,0,0,0.3);
     text-align: center;
     transition: 0.4s;
-     
     padding-bottom: 10px;
 }
 
@@ -384,8 +367,6 @@ header .icons {
     font-size: 18px;
     color: #050505;
 }
-
- 
 
 .btn {
     display: inline-block;
@@ -420,8 +401,7 @@ header .icons {
     z-index: 2; 
     margin-right: 100px;
     background-color: rgb(247, 209, 215);
-
-}/* blur එකට උඩින් කාඩ්පත් පෙන්වීමට */
+} 
 
 
 .boq-card {
@@ -495,7 +475,7 @@ boq {
     margin-right: 100px;
     background-color: rgb(247, 209, 215);
 
-}/* blur එකට උඩින් කාඩ්පත් පෙන්වීමට */
+} 
 
 
 .boq-card {
@@ -550,9 +530,6 @@ boq {
     background: #fcd6fd;
     color: #040404;
 }
-
-
-
 
 /* ========================================== Review Page ========================================== */
 .review-section{
@@ -712,5 +689,3 @@ form button:hover{
 .footer-links a:hover{
     color: var(--pink);
 }
-
- 
