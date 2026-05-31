@@ -13,7 +13,7 @@
     text-decoration: none;
     text-transform: capitalize;
     transition: 0.3s linear;
-    box-sizing: border-box; /* Elements පිටතට පැනීම සහ පින්තූර කැපී යාම වළක්වයි */
+    box-sizing: border-box; 
 }
 
 body {
